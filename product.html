@@ -7,23 +7,59 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="image-container">
-    <img src="images/vattenflaska.jpg" alt="Green">
-    <img src="images/Vattenflaskarosa.jpg" alt="Pink">
-    <img src="images/vattenflaskablue.jpg" alt="Blue">
+<div class="slideshow-container">
+    
+    <div class="mySlides fade">
+        <img src="images/vattenflaska.jpg" alt="Green">
+    </div>
+
+    <div class="mySlides fade">
+        <img src="images/Vattenflaskarosa.jpg" alt="Pink">
+    </div>
+
+    <div class="mySlides fade">
+        <img src="images/vattenflaskablue.jpg" alt="Blue">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
 </div>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    // Funktion för nästa/föregående kontroller
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Huvudfunktion för att visa bilder
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        
+        // Göm alla bilder först
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        
+        // Visa den aktuella bilden
+        slides[slideIndex-1].style.display = "block";
+    }
+</script>
 <nav>
-    <h1 class="header-left">The Perfect Waterbottle</h1>
+    <h1 class="header-left">The <br>Perfect <br>Waterbottle</h1>
     <button href="index.html" class="button-38">Home</button> 
     <button href="checkout.html" class="button-38">Checkout</button> 
     <button href="product.html" class="button-38">Product</button> 
     <button href="about.html" class="button-38">About</button> 
     <button href="contact.html" class="button-38">Contact</button>
 </nav>
-<p>Traditional bottles are like blankets (they just trap the cold). The "Perfect Bottle" is like a portable refrigerator. It uses a tiny piece of technology called a Peltier Chip (Thermoelectric Cooler).
-How it works: When electricity from a small rechargeable battery flows through this chip, one side gets freezing cold while the other side gets hot.
-The Function: The cold side is pressed against the metal lining of your water, sucking the heat out of your drink and dropping the temperature by 10-20 degrees in minutes!
-The Exhaust: To keep the bottle from overheating, the bottom has tiny "heat sinks" (metal fins) and a silent micro-fan to blow the warmth away.</p>
+<p>Traditional bottles are like blankets it makes the water warm. The Perfect Bottle is like a portable refrigerator. It uses a tiny piece of technology called a Peltier Chip Thermoelectric Cooler.
+</p>
 </body>
 </html>
 
