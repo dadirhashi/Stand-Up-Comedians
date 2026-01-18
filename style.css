@@ -1,0 +1,121 @@
+body {
+    margin: 0; /* tar bort default-marginal som annars puttar ner nav-baren */
+    background-color: #BFDDD5;
+    padding-top: 100px;
+    box-sizing: border-box
+}
+
+nav {
+    position: fixed;      /* fast högst upp */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #BFDDD5;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header-left {
+    text-align: left;
+    position: absolute;
+    top: 180px;      
+    left: 25px;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin: 0;
+    color: #4a776d;
+}
+
+p {
+    font-family: Helvetica, sans-serif; 
+    font-size: 16px;               
+    line-height: 1.6;              
+    color: #333;                  
+    max-width: 600px;             
+    margin: 10px auto;             
+}
+
+/* --- Slideshow Styling --- */
+
+.slideshow-container {
+  max-width: 800px;     
+  position: relative;
+  margin: auto;         
+}
+
+.mySlides img {
+  width: 100%;       
+  height: auto;      
+  border-radius: 10px;
+}
+
+/* Nästa & Föregående knappar */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white; /* Vit pil */
+  font-weight: bold;
+  font-size: 25px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Placera "next" till höger */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Vid hover, gör bakgrunden mörkare */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.6);
+}
+
+/* Animation för mjuk övergång (Fade) */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.button-38 {
+  background-color: #BFDDD5;
+  border: 0;
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #4a776d;
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none #D1D5DB solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+}
+
+.button-38:hover {
+  background-color: rgb(249,250,251);
+}
+
+.button-38:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.button-38:focus-visible {
+  box-shadow: none;
+}
