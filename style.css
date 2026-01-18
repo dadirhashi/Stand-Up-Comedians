@@ -1,19 +1,22 @@
 body {
     margin: 0; /* tar bort default-marginal som annars puttar ner nav-baren */
     background-color: #BFDDD5;
-    padding-top: 100px;
+    padding-top: 60px;
     box-sizing: border-box
 }
 
 nav {
     position: fixed;      /* fast högst upp */
-    top: 0;
+    top: 5px;
     left: 0;
     width: 100%;
     background-color: #BFDDD5;
-    padding: 10px 0;
     text-align: center;
 }
+
+
+
+
 
 .header-left {
     text-align: left;
@@ -43,13 +46,14 @@ p {
 .slideshow-container {
   max-width: 800px;     
   position: relative;
-  margin: auto;         
+  margin: auto;   
 }
 
 .mySlides img {
   width: 100%;       
   height: auto;      
   border-radius: 10px;
+  background-color: #333;
 }
 
 /* Nästa & Föregående knappar */
@@ -89,6 +93,8 @@ p {
   from {opacity: .4}
   to {opacity: 1}
 }
+
+
 
 .button-38 {
   background-color: #BFDDD5;
