@@ -79,10 +79,12 @@ textarea {
     cursor: pointer;
     max-width: 10rem;
     align-self: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .button:hover {
     background-color: #1A5366;
+    transform: scale(1.05);
 }
 
 body > div:last-child {
@@ -146,10 +148,9 @@ footer {
     justify-content: center; 
     text-align: center; 
     padding: 1rem;
-
     position: relative;
     min-height: 250px;
-    overflow: hidden;  
+    overflow: hidden;
 }
 
 .wrapper {
