@@ -1,24 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+    <title>Checkout - The Perfect Bottle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="checkout.css">
 </head>
+
 <body>
-<h1>Products</h1>
-<p>Welcome to this page (Products)</p>
-<a href="https://www.google.com/imghp" target="_blank">
-    <img src="images/image2.jpg" alt="Small image" width="150" height="150">
-</a>
-<!-- Links to all 5 pages. -->
-<nav>
-    <a href="index.html">Home</a> |
-    <a href="checkout.html">Products</a> |
-    <a href="product.html">Product</a> |
-    <a href="about.html">About</a> |
-    <a href="contact.html">Contact</a>
-</nav>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="checkout.html">Checkout</a>
+        <a href="product.html">Product</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <h1>Shopping Cart</h1>
+
+    <div class="container">
+        
+        <div class="cart-items">
+            <div class="cart-item">
+                <img src="https://cdn.discordapp.com/attachments/1460636149394575525/1462738321628205109/vattenflaskablue.jpg?ex=696f48b8&is=696df738&hm=f7139ac43143669eae44759801e905f9cd474e8b5999d1518df3498ce9313ab0&" alt="Water Bottle" class="item-image">
+                <div class="item-details">
+                    <h3>The Perfect Bottle - Blue</h3>
+                    <p class="item-description">Premium insulated water bottle</p>
+                    <div class="quantity">
+                        <label for="qty1">Quantity:</label>
+                        <input type="number" id="qty1" value="1" min="1" max="10">
+                    </div>
+                </div>
+                <div class="item-price">
+                    <p class="price">$29.99</p>
+                    <button class="remove-btn">Remove</button>
+                </div>
+            </div>
+
+            <div class="cart-item">
+                <img src="https://media.discordapp.net/attachments/1460636149394575525/1462738321951428691/Vattenflaskarosa.jpg?ex=696f48b8&is=696df738&hm=d6b4d143f39f2a5ff18cbca289974bc01b392d3416134fd4cfdfe96e356a90dd&=&format=webp&width=837&height=837" alt="Water Bottle" class="item-image">
+                <div class="item-details">
+                    <h3>The Perfect Bottle - Pink</h3>
+                    <p class="item-description">Premium insulated water bottle</p>
+                    <div class="quantity">
+                        <label for="qty2">Quantity:</label>
+                        <input type="number" id="qty2" value="1" min="1" max="10">
+                    </div>
+                </div>
+                <div class="item-price">
+                    <p class="price">$29.99</p>
+                    <button class="remove-btn">Remove</button>
+                </div>
+            </div>
+
+            <div class="cart-item">
+                <img src="https://media.discordapp.net/attachments/1460636149394575525/1462738322270064702/vattenflaska.jpg?ex=696f48b8&is=696df738&hm=ac5400a64c82321d51675b6ce971ebce2efb72fe0cea9b422f9fb1c61a6ea88f&=&format=webp&width=837&height=837" alt="Water Bottle" class="item-image">
+                <div class="item-details">
+                    <h3>The Perfect Bottle - Green</h3>
+                    <p class="item-description">Premium insulated water bottle</p>
+                    <div class="quantity">
+                        <label for="qty3">Quantity:</label>
+                        <input type="number" id="qty3" value="1" min="1" max="10">
+                    </div>
+                </div>
+                <div class="item-price">
+                    <p class="price">$29.99</p>
+                    <button class="remove-btn">Remove</button>
+                </div>
+            </div>
+
+    
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div class="summary-row">
+                <span>Subtotal:</span>
+                <span>$59.98</span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping:</span>
+                <span>$5.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Tax:</span>
+                <span>$5.20</span>
+            </div>
+            <hr>
+            <div class="summary-row total">
+                <span>Total:</span>
+                <span>$70.18</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    
 </body>
+
 </html>
 
