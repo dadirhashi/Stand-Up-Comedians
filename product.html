@@ -23,35 +23,34 @@
 
     <a class="prev" onclick="plusSlides(-1)">❮</a>
     <a class="next" onclick="plusSlides(1)">❯</a>
-
 </div>
+
 <script>
     let slideIndex = 1;
     showSlides(slideIndex);
-    // Funktion för nästa/föregående kontroller
+
     function plusSlides(n) {
         showSlides(slideIndex += n);
     }
 
-    // Huvudfunktion för att visa bilder
     function showSlides(n) {
         let i;
         let slides = document.getElementsByClassName("mySlides");
         if (n > slides.length) {slideIndex = 1}
         if (n < 1) {slideIndex = slides.length}
         
-        // Göm alla bilder först
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
         }
         
-        // Visa den aktuella bilden
         slides[slideIndex-1].style.display = "block";
     }
+
     setInterval(function() {
         plusSlides(1); 
-    }, 5000);
+    }, 8000);
 </script>
+
 <nav>
     <h1 class="header-left">The <br>Perfect <br>Waterbottle</h1>
     <a href="index.html" class="button-38">Home</a> 
@@ -59,17 +58,29 @@
     <a href="product.html" class="button-38">Product</a> 
     <a href="about.html" class="button-38">About</a> 
     <a href="checkout.html" class="button-38">Checkout</a> 
-
 </nav>
-<p>Traditional bottles are like blankets it makes the water warm. <br>The Perfect Bottle is like a portable refrigerator. <br>It uses a tiny piece of technology called a Peltier Chip Thermoelectric Cooler.
+
+<p>
+    Traditional bottles are like blankets it makes the water warm. <br>
+    The Perfect Bottle is like a portable refrigerator. <br>
+    It uses a tiny piece of technology called a Peltier Chip Thermoelectric Cooler.
 </p>
 
-<div class="video-container">
-    <video controls>
-        <source src="watervidfun.mp4" type="video/mp4">
-        Din webbläsare stödjer inte video.
-    </video>
+<div class="video-wrapper">
+    <div class="video-container">
+        <video controls>
+            <source src="watervidfun.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="video-container">
+        <video controls>
+            <source src="reklamfilm.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 </div>
+
 </body>
 </html>
-

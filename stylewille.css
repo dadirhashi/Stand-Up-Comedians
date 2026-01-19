@@ -1,15 +1,14 @@
 body {
     margin: 0; 
     background-color: #F3F8F2;
-    padding-top: 70px;
-    box-sizing: border-box
+    padding-top: 80px;
+    box-sizing: border-box;
 }
-
 
 nav {
     position: fixed; 
     padding: 10px;
-    top: 1px;
+    top: 0px;
     width: 100%;
     height: 40px;
     background-color: #BFDDD5;
@@ -19,7 +18,7 @@ nav {
 .header-left {
     text-align: left;
     position: absolute;
-    top: 180px;      
+    top: 180px;
     left: 25px;
     font-family: 'Helvetica', sans-serif;
     font-size: 4rem;
@@ -33,32 +32,30 @@ nav {
 p {
     text-align: left;
     position: absolute;
-    top: 430px;      
+    top: 430px;
     left: 25px;
-    font-family: Helvetica, sans-serif; 
-    font-size: 16px;               
-    line-height: 1.6;              
-    color: #4a776d;                  
-    max-width: 600px;             
-    margin: 10px auto;             
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4a776d;
+    max-width: 600px;
+    margin: 10px auto;
 }
 
-/* --- Slideshow Styling --- */
-
+/* Slideshow */
 .slideshow-container {
-  max-width: 800px;     
+  max-width: 800px;
   position: relative;
-  margin: auto;  
+  margin: auto;
 }
 
 .mySlides img {
-  width: 100%;       
-  height: auto;      
+  width: 100%;
+  height: auto;
   border-radius: 10px;
   background-color: #333;
 }
 
-/* Nästa & Föregående knappar */
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -66,29 +63,27 @@ p {
   width: auto;
   margin-top: -22px;
   padding: 16px;
-  color: white; /* Vit pil */
+  color: white;
   font-weight: bold;
-  font-size: 25px;
-  border-radius: 0 3px 3px 0;
+  font-size: 30px;
+  border-radius: 15px;
   user-select: none;
+  right: 550px;
 }
 
-/* Placera "next" till höger */
 .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+  right: 220px;
+  border-radius: 10px;
 }
 
-/* Vid hover, gör bakgrunden mörkare */
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.6);
+  background-color: #4a776d;
 }
 
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
 }
-
 
 .button-38 {
   font-family: 'Helvetica', sans-serif;
@@ -119,23 +114,24 @@ p {
   box-shadow: none;
 }
 
-/* --- Video Styling --- */
+/* Video layout */
+.video-wrapper {
+    position: absolute;
+    margin-top: 50px; /* justera detta så att de hamnar där du vill */
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding-bottom: 50px;
+    right: 100px;
+    bottom: -1000px;
+}
+
 .video-container {
-    position: absolute;      /* Gör att vi kan placera den exakt */
-    top: 1000px;    /* Hur långt ner den ska hamna (justera om den krockar med texten) */
-    left: 500px; 
-    right: 0; 
-    margin: auto;            /* Centrerar videon */
-    width: 100%;
-    max-width: 1000px;        /* Sätter bredden till max 400px (liten video) */
-    padding: 20px;           /* Lite luft runt om */
-    box-sizing: border-box;
+    max-width: 800px;
 }
 
 .video-container video {
-    width: 100%;             /* Ser till att videospelaren fyller hela boxen */
-    border-radius: 10px;     /* Snygga rundade hörn (valfritt) */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* En liten skugga för snygg effekt */
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
-
-
