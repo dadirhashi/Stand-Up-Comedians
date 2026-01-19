@@ -11,7 +11,7 @@ nav {
     left: 0;
     width: 100%;
     background-color: #BFDDD5;
-    padding: 10px 0;
+    padding: 20px 0;
     text-align: center;
 }
 
@@ -91,6 +91,7 @@ p {
 }
 
 .button-38 {
+  font-family: 'Helvetica', sans-serif;
   background-color: #BFDDD5;
   border: 0;
   border-radius: .5rem;
@@ -99,7 +100,8 @@ p {
   font-size: .875rem;
   font-weight: 600;
   line-height: 1.25rem;
-  padding: 15px;
+  padding: 20px;
+  margin: 5px;
   text-align: center;
   text-decoration: none #D1D5DB solid;
   text-decoration-thickness: auto;
