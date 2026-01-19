@@ -1,22 +1,18 @@
 body {
-    margin: 0; /* tar bort default-marginal som annars puttar ner nav-baren */
+    margin: 0; 
     background-color: #BFDDD5;
     padding-top: 60px;
     box-sizing: border-box
 }
 
 nav {
-    position: fixed;      /* fast högst upp */
-    top: 5px;
+    position: fixed; 
+    top: 18px;
     left: 0;
     width: 100%;
     background-color: #BFDDD5;
     text-align: center;
 }
-
-
-
-
 
 .header-left {
     text-align: left;
@@ -95,8 +91,8 @@ p {
 }
 
 
-
 .button-38 {
+  font-family: 'Helvetica', sans-serif;
   background-color: #BFDDD5;
   border: 0;
   border-radius: .5rem;
@@ -105,7 +101,7 @@ p {
   font-size: .875rem;
   font-weight: 600;
   line-height: 1.25rem;
-  padding: 15px;
+  padding: 20px;
   text-align: center;
   text-decoration: none #D1D5DB solid;
   text-decoration-thickness: auto;
