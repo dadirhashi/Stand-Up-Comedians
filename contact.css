@@ -44,7 +44,17 @@ h1 {
     margin: 0 auto 60px;
     padding: 40px;
     background-color: #fafdfb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}   
 
 label {
     display: block;
@@ -62,7 +72,7 @@ textarea {
     background-color: #ffffff;
 }
 
-input[type="submit"] {
+.button {
     margin-top: 25px;
     padding: 12px 30px;
     background-color: #5fa99a;
@@ -70,9 +80,11 @@ input[type="submit"] {
     border: none;
     border-radius: 25px;
     cursor: pointer;
+    max-width: 10rem;
+    align-self: center;
 }
 
-input[type="submit"]:hover {
+.button:hover {
     background-color: #1A5366;
 }
 
@@ -122,4 +134,52 @@ footer {
     height: 100%;
     width: 1px;
     background-color: #1a536638;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    display: block;
+}
+
+.confirmationBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    justify-content: center; 
+    text-align: center; 
+    padding: 1rem;
+
+    position: relative;
+    min-height: 250px;
+    overflow: hidden;  
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.animated-check {
+    height: 10em;
+    width: 10em
+}
+
+.animated-check path {
+    fill: none;
+    stroke: #7ac142;
+    stroke-width: 4;
+    stroke-dasharray: 23;
+    stroke-dashoffset: 23;
+    animation: draw 0.4s linear forwards;
+    stroke-linecap: round;
+    stroke-linejoin: round
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0
+    }
 }
