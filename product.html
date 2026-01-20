@@ -57,8 +57,44 @@
     <a href="contact.html" class="button-38">Contact</a>
     <a href="product.html" class="button-38">Product</a> 
     <a href="about.html" class="button-38">About</a> 
-    <a href="checkout.html" class="button-38">Checkout</a>
+    <button-38 onclick="loadJoke()" class="button-38">Get a new joke</button-38>
+    <a href="checkout.html" class="image-button">
+        <img src="check.png" alt="Click me button">
+    </a>
+
 </nav>
+
+<p id="joke"></p>
+<script>
+  // Hämta paragrafen där skämtet ska visas
+  const jokeElement = document.getElementById("joke");
+
+  // Funktion som hämtar ett nytt skämt
+  function loadJoke() {
+    // Visa laddningstext medan vi väntar
+    jokeElement.textContent = "Laddar skämt...";
+
+    // Anropa API:et för att få ett slumpmässigt skämt
+    fetch("https://official-joke-api.appspot.com/random_joke")
+      .then(function (response) {
+        // Gör om svaret till JSON
+        return response.json();
+      })
+      .then(function (joke) {
+        // Visa skämtet på sidan
+        jokeElement.textContent =
+          joke.setup + " — " + joke.punchline;
+      })
+      .catch(function () {
+        // Om något går fel, visa ett felmeddelande
+        jokeElement.textContent =
+          "Kunde inte ladda skämt 😢";
+      });
+  }
+
+  // Ladda ett skämt automatiskt när sidan öppnas
+  loadJoke();
+</script>
 
 <div class="video-wrapper">
     <div class="video-container">

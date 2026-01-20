@@ -123,3 +123,24 @@ p {
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+
+.image-button {
+  position: absolute;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+  width: 54px;
+  right: 80px;
+  top: 2px;
+}
+        
+.image-button img {
+  width: 50px; 
+  height: auto;
+  display: block;
+}
+
+.image-button:hover {
+    background-color: #F3F8F2;
+}
