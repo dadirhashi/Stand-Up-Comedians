@@ -1,24 +1,28 @@
-body {
-    margin: 0; /* tar bort default-marginal som annars puttar ner nav-baren */
-    background-color: #BFDDD5;
-    padding-top: 100px;
-    box-sizing: border-box
+/* Merged CSS file - combines both provided stylesheets, removes duplicates, keeps all unique rules */
+/* Comments explain key changes: duplicates removed (e.g., body, nav, button-38), absolute positions preserved for first file's layout, flex/contact styles from second */
+
+html, body {
+    margin: 0;
+    background-color: #F3F8F2;
+    padding-top: 80px;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevents horizontal scroll from absolute positioning [conversation_history:8] */
 }
 
 nav {
-    position: fixed;      /* fast högst upp */
-    top: 0;
-    left: 0;
+    position: fixed;
+    padding: 15px;
+    top: 0px;
     width: 100%;
+    height: 32px;
     background-color: #BFDDD5;
-    padding: 20px 0;
     text-align: center;
 }
 
 .header-left {
     text-align: left;
     position: absolute;
-    top: 180px;      
+    top: 180px;
     left: 25px;
     font-family: 'Helvetica', sans-serif;
     font-size: 4rem;
@@ -30,94 +34,284 @@ nav {
 }
 
 p {
-    font-family: Helvetica, sans-serif; 
-    font-size: 16px;               
-    line-height: 1.6;              
-    color: #333;                  
-    max-width: 600px;             
-    margin: 10px auto;             
+    text-align: left;
+    position: absolute;
+    top: 430px;
+    left: 25px;
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a776d;
+    max-width: 600px;
+    margin: 10px auto;
 }
 
-/* --- Slideshow Styling --- */
+h1 {
+    text-align: center;
+    margin: 1px 0;
+    font-size: 4rem;
+}
 
+/* Slideshow */
 .slideshow-container {
-  max-width: 800px;     
-  position: relative;
-  margin: auto;         
+    max-width: 800px;
+    position: relative;
+    margin: auto;
+    top: 50px;
 }
 
 .mySlides img {
-  width: 100%;       
-  height: auto;      
-  border-radius: 10px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    background-color: #333;
 }
 
-/* Nästa & Föregående knappar */
 .prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white; /* Vit pil */
-  font-weight: bold;
-  font-size: 25px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 15px;
+    user-select: none;
+    right: 550px;
 }
 
-/* Placera "next" till höger */
 .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+    right: 220px;
+    border-radius: 10px;
 }
 
-/* Vid hover, gör bakgrunden mörkare */
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.6);
-}
-
-/* Animation för mjuk övergång (Fade) */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+    background-color: #4a776d;
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+    from {opacity: .4}
+    to {opacity: 1}
 }
 
-.button-38 {
-  font-family: 'Helvetica', sans-serif;
-  background-color: #BFDDD5;
-  border: 0;
-  border-radius: .5rem;
-  box-sizing: border-box;
-  color: #4a776d;
-  font-size: .875rem;
-  font-weight: 600;
-  line-height: 1.25rem;
-  padding: 20px;
-  margin: 5px;
-  text-align: center;
-  text-decoration: none #D1D5DB solid;
-  text-decoration-thickness: auto;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  cursor: pointer;
+.button-38, .button {
+    font-family: 'Helvetica', sans-serif;
+    background-color: #BFDDD5;
+    box-sizing: border-box;
+    color: #4a776d;
+    font-size: .950rem;
+    font-weight: 600;
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-.button-38:hover {
-  background-color: rgb(249,250,251);
+.button {
+    width: 928px;
+    height: 50px;
+    padding: 0; /* Overrides padding for specific button size */
 }
 
-.button-38:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
+.button-38:hover, .button:hover {
+    background-color: #F3F8F2;
 }
 
-.button-38:focus-visible {
-  box-shadow: none;
+/* Video layout */
+.video-wrapper {
+    position: absolute;
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding-bottom: 50px;
+    right: 150px;
+    bottom: -1000px;
+}
+
+.video-container {
+    max-width: 800px;
+}
+
+.video-container video {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.image-button {
+    position: absolute;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: block;
+    width: 60px;
+    right: 80px;
+    top: 2px;
+}
+
+.image-button img {
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+
+.image-button:hover {
+    background-color: #F3F8F2;
+    border-radius: 5px;
+}
+
+.kundtext {
+    position: absolute;
+    top: 1500px;
+    left: 30px;
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.image-trust {
+    position: absolute;
+    width: 100px;
+    bottom: -755px;
+    left: 30px;
+    height: 100px;
+}
+
+.row {
+    flex: auto;
+    position: absolute;
+    bottom: -870px;
+    width: 200px;
+    left: 30px;
+    height: 130px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 40px;
+    background-color: #fafdfb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #cfded8;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+body > div:last-child {
+    max-width: 900px;
+    margin: 0 auto 80px;
+    color: #1A5366;
+}
+
+.message {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    gap: 60px;
+    margin: 60px auto 80px;
+    max-width: 900px;
+    text-align: center;
+}
+
+.phone,
+.address {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.phone p:first-child,
+.address p:first-child {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.phone {
+    position: relative;
+}
+
+.phone::after {
+    content: "";
+    position: absolute;
+    right: -30px;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background-color: #1a536638;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    display: block;
+}
+
+.confirmationBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    min-height: 250px;
+    overflow: hidden;
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.animated-check {
+    height: 10em;
+    width: 10em
+}
+
+.animated-check path {
+    fill: none;
+    stroke: #7ac142;
+    stroke-width: 4;
+    stroke-dasharray: 23;
+    stroke-dashoffset: 23;
+    animation: draw 0.4s linear forwards;
+    stroke-linecap: round;
+    stroke-linejoin: round
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0
+    }
 }

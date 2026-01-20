@@ -1,42 +1,25 @@
-/*grön #BFDDD5 */
-/*blåish text #1A5366 */
-/*vit bakgrund #F3F8F2 */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', sans-serif;
-}
 
 body {
-    background-color: #f8f2f2;
-    color: #1A5366;
-    line-height: 1.6;
+    margin: 0; 
+    background-color: #F3F8F2;
+    padding-top: 80px;
+    box-sizing: border-box;
 }
 
 nav {
+    position: fixed; 
+    padding: 15px;
+    top: 0px;
+    width: 100%;
+    height: 32px;
     background-color: #BFDDD5;
-    padding: 20px 40px;
     text-align: center;
-}
-
-nav a {
-    color: #1A5366;
-    text-decoration: none;
-    margin-right: 15px;
-    font-weight: 500;
-    padding: 8px 15px;
-}
-
-nav a:hover {
-    background-color: #F3F8F2;
-    border-radius: 20px;
 }
 
 h1 {
     text-align: center;
     margin: 60px 0;
-    font-size: 36px;
+    font-size: 3rem;
 }
 
 .container {
@@ -44,7 +27,17 @@ h1 {
     margin: 0 auto 60px;
     padding: 40px;
     background-color: #fafdfb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}   
 
 label {
     display: block;
@@ -62,18 +55,51 @@ textarea {
     background-color: #ffffff;
 }
 
-input[type="submit"] {
-    margin-top: 25px;
-    padding: 12px 30px;
-    background-color: #5fa99a;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
+.button {
+    font-family: 'Helvetica', sans-serif;
+  background-color: #BFDDD5;
+  box-sizing: border-box;
+  color: #4a776d;
+  width: 928px;
+  height: 50px;
 }
 
-input[type="submit"]:hover {
-    background-color: #1A5366;
+.button:hover {
+ background-color: #F3F8F2;
+}
+
+.button-38 {
+  font-family: 'Helvetica', sans-serif;
+  background-color: #BFDDD5;
+  box-sizing: border-box;
+  color: #4a776d;
+  font-size: .950rem;
+  font-weight: 600;
+  padding: 30px;
+  text-align: center;
+  text-decoration: none #D1D5DB solid;
+  cursor: pointer;
+}
+
+.button-38:hover {
+  background-color: #F3F8F2;
+}
+
+.image-button {
+  position: absolute;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+  width: 60px;
+  right: 80px;
+  top: 2px;
+}
+        
+.image-button img {
+  width: 60px; 
+  height: 60px;
+  display: block;
 }
 
 body > div:last-child {
@@ -122,4 +148,51 @@ footer {
     height: 100%;
     width: 1px;
     background-color: #1a536638;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    display: block;
+}
+
+.confirmationBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    justify-content: center; 
+    text-align: center; 
+    padding: 1rem;
+    position: relative;
+    min-height: 250px;
+    overflow: hidden;
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.animated-check {
+    height: 10em;
+    width: 10em
+}
+
+.animated-check path {
+    fill: none;
+    stroke: #7ac142;
+    stroke-width: 4;
+    stroke-dasharray: 23;
+    stroke-dashoffset: 23;
+    animation: draw 0.4s linear forwards;
+    stroke-linecap: round;
+    stroke-linejoin: round
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0
+    }
 }
