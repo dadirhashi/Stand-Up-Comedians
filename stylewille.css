@@ -1,317 +1,385 @@
-/* Merged CSS file - combines both provided stylesheets, removes duplicates, keeps all unique rules */
-/* Comments explain key changes: duplicates removed (e.g., body, nav, button-38), absolute positions preserved for first file's layout, flex/contact styles from second */
-
+/* Baslayout */
 html, body {
-    margin: 0;
-    background-color: #F3F8F2;
-    padding-top: 80px;
-    box-sizing: border-box;
-    overflow-x: hidden; /* Prevents horizontal scroll from absolute positioning [conversation_history:8] */
+  margin: 0;
+  padding: 0;
+  background-color: #F3F8F2;
+  box-sizing: border-box;
+  font-family: "Montserrat", Arial, sans-serif;
+    min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    #F3F8F2 50%,   /* topp-halvan */
+    #BFDDD5 50%);
 }
 
-nav {
-    position: fixed;
-    padding: 15px;
-    top: 0px;
-    width: 100%;
-    height: 32px;
-    background-color: #BFDDD5;
-    text-align: center;
+/* Nav högst upp */
+.main-nav {
+  top: 0;
+  width: 100%;
+  height: 64px;
+  background-color: #BFDDD5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
 }
 
-.header-left {
-    text-align: left;
-    position: absolute;
-    top: 180px;
-    left: 25px;
-    font-family: 'Helvetica', sans-serif;
-    font-size: 4rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    line-height: 1.2;
-    margin: 0;
-    color: #4a776d;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
 }
 
-p {
-    text-align: left;
-    position: absolute;
-    top: 430px;
-    left: 25px;
-    font-family: Helvetica, sans-serif;
-    font-size: 16px;
-    line-height: 1.8;
-    color: #4a776d;
-    max-width: 600px;
-    margin: 10px auto;
+.nav-links a {
+  text-decoration: none;
 }
 
-h1 {
-    text-align: center;
-    margin: 1px 0;
-    font-size: 4rem;
+/* Knappar */
+.button-38,
+.button {
+  font-family: inherit;
+  background-color: #BFDDD5;
+  color: #4a776d;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
 }
 
-/* Slideshow */
+.button-38:hover,
+.button:hover {
+  background-color: #F3F8F2;
+}
+
 .slideshow-container {
-    max-width: 800px;
-    position: relative;
-    margin: auto;
-    top: 50px;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 593px;           /* testa lägre än bildens fulla höjd */
 }
 
 .mySlides img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    background-color: #333;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 30px;
-    border-radius: 15px;
-    user-select: none;
-    right: 550px;
+.next,
+.prev {
+  font-family: inherit;
+  background-color: #F3F8F2;
+  color: #4a776d;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 1px;       
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  position: absolute;          
+  top: 50%;                    
+  transform: translateY(-50%);
 }
 
 .next {
-    right: 220px;
-    border-radius: 10px;
+  right: 611px;
 }
 
-.prev:hover, .next:hover {
-    background-color: #4a776d;
+.next:hover, .prev:hover {
+  background-color: #BFDDD5;
 }
 
-@keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-}
-
-.button-38, .button {
-    font-family: 'Helvetica', sans-serif;
-    background-color: #BFDDD5;
-    box-sizing: border-box;
-    color: #4a776d;
-    font-size: .950rem;
-    font-weight: 600;
-    padding: 30px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.button {
-    width: 928px;
-    height: 50px;
-    padding: 0; /* Overrides padding for specific button size */
-}
-
-.button-38:hover, .button:hover {
-    background-color: #F3F8F2;
-}
-
-/* Video layout */
-.video-wrapper {
-    position: absolute;
-    margin-top: 50px;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    padding-bottom: 50px;
-    right: 150px;
-    bottom: -1000px;
-}
-
-.video-container {
-    max-width: 800px;
-}
-
-.video-container video {
-    width: 100%;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
+/* Checkout-ikon i nav */
 .image-button {
-    position: absolute;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    display: block;
-    width: 60px;
-    right: 80px;
-    top: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .image-button img {
-    width: 60px;
-    height: 60px;
-    display: block;
+  width: 40px;
+  height: 40px;
 }
 
-.image-button:hover {
-    background-color: #F3F8F2;
-    border-radius: 5px;
+/* Kontakt-sida generellt */
+.contact-main {
+  max-width: 900px;
+  margin: 120px auto 60px; /* 120px för fixed nav */
+  padding: 0 1rem;
 }
 
-.kundtext {
-    position: absolute;
-    top: 1500px;
-    left: 30px;
-    font-family: Helvetica, sans-serif;
-    font-size: 16px;
-    font-weight: 200;
-}
-
-.image-trust {
-    position: absolute;
-    width: 100px;
-    bottom: -755px;
-    left: 30px;
-    height: 100px;
-}
-
-.row {
-    flex: auto;
-    position: absolute;
-    bottom: -870px;
-    width: 200px;
-    left: 30px;
-    height: 130px;
-}
-
-.container {
-    max-width: 900px;
-    margin: 0 auto 60px;
-    padding: 40px;
-    background-color: #fafdfb;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.contactForm {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-label {
-    display: block;
-    margin-top: 20px;
-    font-weight: bold;
-}
-
-input[type="text"],
-textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 8px;
-    border: 1px solid #cfded8;
-    border-radius: 4px;
-    background-color: #ffffff;
-}
-
-body > div:last-child {
-    max-width: 900px;
-    margin: 0 auto 80px;
-    color: #1A5366;
+.contact-main h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
 }
 
 .message {
-    text-align: center;
-    margin-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
+/* Form-container */
+.container {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  padding: 40px;
+  background-color: #fafdfb;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 8px;
+}
+
+/* Formuläret */
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+label {
+  display: block;
+  margin-top: 16px;
+  font-weight: 600;
+  color: #1A5366;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #cfded8;
+  border-radius: 4px;
+  background-color: #ffffff;
+  font: inherit;
+  resize: vertical;
+}
+
+/* Submit-knapp */
+.contactForm .button {
+  width: 100%;
+  margin-top: 24px;
+  height: 50px;
+}
+
+/* Felmeddelanden */
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  display: block;
+}
+
+/* Bekräftelse-ruta */
+.confirmationBox {
+  display: none;           /* styrs via JS */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  min-height: 250px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animated-check {
+  height: 6em;
+  width: 6em;
+}
+
+.animated-check path {
+  fill: none;
+  stroke: #7ac142;
+  stroke-width: 4;
+  stroke-dasharray: 23;
+  stroke-dashoffset: 23;
+  animation: draw 0.4s linear forwards;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Footer med kontaktinfo */
 footer {
-    display: flex;
-    justify-content: center;
-    align-items: top;
-    gap: 60px;
-    margin: 60px auto 80px;
-    max-width: 900px;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  margin: 40px auto 60px;
+  max-width: 900px;
+  text-align: center;
+  color: #1A5366;
 }
 
 .phone,
 .address {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.phone p:first-child,
-.address p:first-child {
-    font-weight: bold;
-    margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .phone {
-    position: relative;
+  position: relative;
 }
 
 .phone::after {
-    content: "";
-    position: absolute;
-    right: -30px;
-    top: 0;
-    height: 100%;
-    width: 1px;
-    background-color: #1a536638;
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background-color: #1a536638;
 }
 
-.error-message {
-    color: red;
-    font-size: 0.9rem;
-    display: block;
+/* Slideshow */
+.product-hero {
+  display: flex;
+  justify-content: center;
+  
 }
 
-.confirmationBox {
-    display: flex;
+/* header product */
+.header-left {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  color: #4a776d;
+  padding: 2rem;
+  font-size: 50px;
+  font-weight: 750;
+}
+
+/*videor product*/
+.video-wrapper {
+  display: flex;              /* Lägger barnen i rad */
+  justify-content: center;    /* Centrerar hela raden */
+  gap: 20px;                  /* Avstånd mellan videorna */
+  margin: 40px auto;
+  max-width: 1000px;          /* Hur bredt området får bli totalt */
+}
+
+.video-container {
+  flex: 1;                    /* Låt båda ta lika mycket plats */
+}
+
+.video-container video {
+  width: 100%;                /* Fyll containern */
+  height: auto;               /* Behåll proportionerna */
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Wrapper för review + trust/rating */
+.testimonial-section {
+  max-width: 1000px;
+  margin: 160px auto 40px;  /* öka första värdet för att flytta längre ner */
+  padding: 0 1rem;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+/* Vänster kolumn (rubrik + ruta) */
+.testimonial-column {
+  flex: 2;
+  margin-top: 40px;   /* flyttar både h2 + box ner tillsammans */
+}
+
+/* Rubriken ovanför rutan */
+.testimonial-title {
+  margin: 0 0 0.75rem 0;
+  color: #4a776d;
+  top: 100px;
+}
+
+/* Själva rutan */
+.testimonial-card {
+  background-color: #ffffff;
+  border-radius: 50px;
+  padding: 20px 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  color: #4a776d;
+  line-height: 1.6;
+}
+
+.testimonial-card h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: #1A5366;
+}
+
+.testimonial-card p {
+  margin: 0 0 0.8rem 0;
+}
+
+/* Höger kolumn – trust + rating */
+.trust-rating {
+  flex: 1;                     /* smalare kolumn */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 60px;
+}
+
+/* Trust-badge */
+.trust-rating .image-trust {
+  width: 100px;
+  height: 100px;
+}
+
+/* Rating-stjärnor i en rad */
+.rating-row {
+  display: flex;
+  flex-direction: column;      /* eller row om du vill ha dem på samma rad */
+  align-items: center;
+  gap: 8px;
+}
+
+.rating-row img {
+  width: 160px;                /* justera storlek på stjärnorna */
+  height: auto;
+}
+
+/* Responsiv: lägg under varandra på mobil */
+@media (max-width: 768px) {
+  .testimonial-section {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 1rem;
-    position: relative;
-    min-height: 250px;
-    overflow: hidden;
+    align-items: stretch;
+  }
+
+  .trust-rating {
+    align-items: flex-start;
+  }
 }
 
-.wrapper {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.joke-section {
+  max-width: 800px;
+  margin: 40px auto;   /* flyttar hela joke-blocket ner + centrerar det */
+  text-align: center;
 }
 
-.animated-check {
-    height: 10em;
-    width: 10em
-}
-
-.animated-check path {
-    fill: none;
-    stroke: #7ac142;
-    stroke-width: 4;
-    stroke-dasharray: 23;
-    stroke-dashoffset: 23;
-    animation: draw 0.4s linear forwards;
-    stroke-linecap: round;
-    stroke-linejoin: round
-}
-
-@keyframes draw {
-    to {
-        stroke-dashoffset: 0
-    }
+#joke {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #f3f7f6;
 }
