@@ -1,12 +1,16 @@
-body {
-    margin: 0; 
+/* Merged CSS file - combines both provided stylesheets, removes duplicates, keeps all unique rules */
+/* Comments explain key changes: duplicates removed (e.g., body, nav, button-38), absolute positions preserved for first file's layout, flex/contact styles from second */
+
+html, body {
+    margin: 0;
     background-color: #F3F8F2;
     padding-top: 80px;
     box-sizing: border-box;
+    overflow-x: hidden; /* Prevents horizontal scroll from absolute positioning [conversation_history:8] */
 }
 
 nav {
-    position: fixed; 
+    position: fixed;
     padding: 15px;
     top: 0px;
     width: 100%;
@@ -42,70 +46,83 @@ p {
     margin: 10px auto;
 }
 
+h1 {
+    text-align: center;
+    margin: 1px 0;
+    font-size: 4rem;
+}
+
 /* Slideshow */
 .slideshow-container {
-  max-width: 800px;
-  position: relative;
-  margin: auto;
-  top: 50px;
+    max-width: 800px;
+    position: relative;
+    margin: auto;
+    top: 50px;
 }
 
 .mySlides img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  background-color: #333;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    background-color: #333;
 }
 
 .prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 30px;
-  border-radius: 15px;
-  user-select: none;
-  right: 550px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 15px;
+    user-select: none;
+    right: 550px;
 }
 
 .next {
-  right: 220px;
-  border-radius: 10px;
+    right: 220px;
+    border-radius: 10px;
 }
 
 .prev:hover, .next:hover {
-  background-color: #4a776d;
+    background-color: #4a776d;
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+    from {opacity: .4}
+    to {opacity: 1}
 }
 
-.button-38 {
-  font-family: 'Helvetica', sans-serif;
-  background-color: #BFDDD5;
-  box-sizing: border-box;
-  color: #4a776d;
-  font-size: .950rem;
-  font-weight: 600;
-  padding: 30px;
-  text-align: center;
-  text-decoration: none #D1D5DB solid;
-  cursor: pointer;
+.button-38, .button {
+    font-family: 'Helvetica', sans-serif;
+    background-color: #BFDDD5;
+    box-sizing: border-box;
+    color: #4a776d;
+    font-size: .950rem;
+    font-weight: 600;
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-.button-38:hover {
-  background-color: #F3F8F2;
+.button {
+    width: 928px;
+    height: 50px;
+    padding: 0; /* Overrides padding for specific button size */
 }
+
+.button-38:hover, .button:hover {
+    background-color: #F3F8F2;
+}
+
 /* Video layout */
 .video-wrapper {
     position: absolute;
-    margin-top: 50px; /* justera detta så att de hamnar där du vill */
+    margin-top: 50px;
     flex-direction: column;
     align-items: center;
     gap: 40px;
@@ -125,20 +142,20 @@ p {
 }
 
 .image-button {
-  position: absolute;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  display: block;
-  width: 60px;
-  right: 80px;
-  top: 2px;
+    position: absolute;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: block;
+    width: 60px;
+    right: 80px;
+    top: 2px;
 }
-        
+
 .image-button img {
-  width: 60px; 
-  height: 60px;
-  display: block;
+    width: 60px;
+    height: 60px;
+    display: block;
 }
 
 .image-button:hover {
@@ -147,27 +164,154 @@ p {
 }
 
 .kundtext {
-  position: absolute;
-  top: 1500px;
-  left: 30px;
-  font-family: Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: 200;
+    position: absolute;
+    top: 1500px;
+    left: 30px;
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 200;
 }
 
 .image-trust {
-  position: absolute;
-  width: 100px;
-  bottom: -755px;
-  left: 30px;
-  height: 100px;
+    position: absolute;
+    width: 100px;
+    bottom: -755px;
+    left: 30px;
+    height: 100px;
 }
 
 .row {
-  flex: auto;
-  position: absolute;
-  bottom: -870px;
-  width: 200px;
-  left: 30px;
-  height: 130px;
+    flex: auto;
+    position: absolute;
+    bottom: -870px;
+    width: 200px;
+    left: 30px;
+    height: 130px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 40px;
+    background-color: #fafdfb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #cfded8;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+body > div:last-child {
+    max-width: 900px;
+    margin: 0 auto 80px;
+    color: #1A5366;
+}
+
+.message {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    gap: 60px;
+    margin: 60px auto 80px;
+    max-width: 900px;
+    text-align: center;
+}
+
+.phone,
+.address {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.phone p:first-child,
+.address p:first-child {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.phone {
+    position: relative;
+}
+
+.phone::after {
+    content: "";
+    position: absolute;
+    right: -30px;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background-color: #1a536638;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    display: block;
+}
+
+.confirmationBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    min-height: 250px;
+    overflow: hidden;
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.animated-check {
+    height: 10em;
+    width: 10em
+}
+
+.animated-check path {
+    fill: none;
+    stroke: #7ac142;
+    stroke-width: 4;
+    stroke-dasharray: 23;
+    stroke-dashoffset: 23;
+    animation: draw 0.4s linear forwards;
+    stroke-linecap: round;
+    stroke-linejoin: round
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0
+    }
 }
