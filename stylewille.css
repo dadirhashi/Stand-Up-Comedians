@@ -7,7 +7,7 @@ body {
 
 nav {
     position: fixed; 
-    padding: 10px;
+    padding: 15px;
     top: 0px;
     width: 100%;
     height: 32px;
@@ -91,9 +91,9 @@ p {
   background-color: #BFDDD5;
   box-sizing: border-box;
   color: #4a776d;
-  font-size: .875rem;
+  font-size: .950rem;
   font-weight: 600;
-  padding: 25px;
+  padding: 30px;
   text-align: center;
   text-decoration: none #D1D5DB solid;
   cursor: pointer;
@@ -130,17 +130,18 @@ p {
   padding: 0;
   cursor: pointer;
   display: block;
-  width: 54px;
+  width: 60px;
   right: 80px;
   top: 2px;
 }
         
 .image-button img {
-  width: 50px; 
-  height: auto;
+  width: 60px; 
+  height: 60px;
   display: block;
 }
 
 .image-button:hover {
     background-color: #F3F8F2;
+    border-radius: 5px;
 }
