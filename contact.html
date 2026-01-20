@@ -7,37 +7,65 @@
     <title>Contact</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aclonica&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Mono&family=Ranchers&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <!-- Links to all 5 pages. -->
     <nav>
         <a href="index.html">Home</a>
-        <a href="checkout.html">Products</a>
         <a href="product.html">Product</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
+        <a href="checkout.html">Checkout</a>
     </nav>
     <h1>Contact</h1>
     <h2 class="message">Send us a message</h2>
     <div class="container">
-        <form action=""> <label for="name">Name</label> <input type="text" id="name" name="name"
-                placeholder="Enter your name.."> <label for="Email">Email</label> <input type="text" id="email"
-                name="email" placeholder="Enter your email.."> <label for="subject">Subject</label> <textarea
-                id="subject" name="subject" placeholder="Write your message.." style="height:200px"></textarea> <input
-                type="submit" value="Submit">
+        <form id="contactForm" class="contactForm">
+            <label for="name">Name</label>
+            <span class="error-message" id="nameError"></span>
+            <input type="text" id="name" name="name" placeholder="Enter your name..">
+
+            <label for="email">Email</label>
+            <span class="error-message" id="emailError"></span>
+            <input type="text" id="email" name="email" placeholder="Enter your email..">
+
+            <label for="subject">Subject</label>
+            <span class="error-message" id="subjectError"></span>
+            <textarea id="subject" name="subject" placeholder="Write your message.." style="height:200px"></textarea>
+
+            <input class="button" type="submit" value="Submit">
         </form>
+        <div id="confirmationBox" class="confirmationBox"
+            style="display:none; position:relative; min-height:200px; overflow:hidden;">
+            <div class="wrapper"> <svg class="animated-check" viewBox="0 0 24 24">
+                    <path d="M4.1 12.7L9 17.6 20.3 6.3" fill="none" />
+                </svg>
+            </div>
+            <h3>
+                Thank you for your message!
+            </h3>
+            <a href="contact.html">
+                <button class="button">Back</button>
+            </a>
+        </div>
     </div>
+    <footer>
+        <div class="phone">
+            <i class="fa fa-phone" style="font-size:1.5rem"></i>
+            <p>+46123456789</p>
+        </div>
+        <div class="address">
+            <i class="fa fa-map-marker" style="font-size:1.5rem"></i>
+            <p>Bottleroad 1 <br> 234 56 Watertown</p>
+        </div>
+    </footer>
+    <script src="confirmationScript.js"></script>
 </body>
-<footer>
-    <div class="phone">
-        <i class="fa fa-phone" style="font-size:1.5rem"></i>
-        <p>+46123456789</p>
-    </div>
-    <div class="address">
-        <i class="fa fa-map-marker" style="font-size:1.5rem"></i>
-        <p>Bottleroad 1 <br> 234 56 Watertown</p>
-    </div>
-</footer>
 
 </html>
