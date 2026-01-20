@@ -23,43 +23,114 @@
 
     <a class="prev" onclick="plusSlides(-1)">❮</a>
     <a class="next" onclick="plusSlides(1)">❯</a>
-
 </div>
 
 <script>
     let slideIndex = 1;
     showSlides(slideIndex);
-    // Funktion för nästa/föregående kontroller
+
     function plusSlides(n) {
         showSlides(slideIndex += n);
     }
 
-    // Huvudfunktion för att visa bilder
     function showSlides(n) {
         let i;
         let slides = document.getElementsByClassName("mySlides");
         if (n > slides.length) {slideIndex = 1}
         if (n < 1) {slideIndex = slides.length}
         
-        // Göm alla bilder först
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
         }
         
-        // Visa den aktuella bilden
         slides[slideIndex-1].style.display = "block";
     }
+
+    setInterval(function() {
+        plusSlides(1); 
+    }, 8000);
 </script>
+
 <nav>
     <h1 class="header-left">The <br>Perfect <br>Waterbottle</h1>
     <a href="index.html" class="button-38">Home</a> 
-    <a href="checkout.html" class="button-38">Checkout</a> 
+    <a href="contact.html" class="button-38">Contact</a>
     <a href="product.html" class="button-38">Product</a> 
     <a href="about.html" class="button-38">About</a> 
-    <a href="contact.html" class="button-38">Contact</a>
+    <button-38 onclick="loadJoke()" class="button-38">Get a new joke</button-38>
+    <a href="checkout.html" class="image-button">
+        <img src="check.png" alt="Click me button">
+    </a>
+
 </nav>
-<p>Traditional bottles are like blankets it makes the water warm. The Perfect Bottle is like a portable refrigerator. It uses a tiny piece of technology called a Peltier Chip Thermoelectric Cooler.
-</p>
+
+<p id="joke"></p>
+
+<img src="trust.png" class="image-trust">
+
+<div class="row">
+  <div class="column">
+    <img src="stars.png" alt="Star1" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="stars.png" alt="Stars2" style="width:100%">
+  </div>
+</div>
+
+<div class="kundtext"> 
+<br>Jag vet inte var jag ska börja. <br>Den här vattenflaskan har förändrat mitt liv. <br>Jag köpte den för att sluta köpa engångsflaskor – men jag anade inte att jag köpte en port till en ny dimension av vätskebalans.
+
+<br>Vattnet smakar som om det filtrerats genom moln från Himalaya. Kall? Den håller kylan längre än min vilja att fortsätta ett nyårslöfte. <br>Jag tappade den från tredje våningen – inte en skråma (på flaskan, vill säga). <br>Min granne fick dock en lätt bula, men till och med han sa: “Ja, den där flaskan är ju fantastisk.”
+
+<br>Sedan jag började använda den här flaskan har jag märkt att plantorna växer bättre, <br>katten är snällare och jag får spontana komplimanger för min aura. <br>Jag tror inte jag dricker vatten längre – jag dricker ren perfektion. <br>
+
+10/10. <br>Skulle köpa igen, om den någonsin gick sönder.</div>
+
+<script>
+  // Hämta paragrafen där skämtet ska visas
+  const jokeElement = document.getElementById("joke");
+
+  // Funktion som hämtar ett nytt skämt
+  function loadJoke() {
+    // Visa laddningstext medan vi väntar
+    jokeElement.textContent = "Laddar skämt...";
+
+    // Anropa API:et för att få ett slumpmässigt skämt
+    fetch("https://official-joke-api.appspot.com/random_joke")
+      .then(function (response) {
+        // Gör om svaret till JSON
+        return response.json();
+      })
+      .then(function (joke) {
+        // Visa skämtet på sidan
+        jokeElement.textContent =
+          joke.setup + " — " + joke.punchline;
+      })
+      .catch(function () {
+        // Om något går fel, visa ett felmeddelande
+        jokeElement.textContent =
+          "Kunde inte ladda skämt 😢";
+      });
+  }
+
+  // Ladda ett skämt automatiskt när sidan öppnas
+  loadJoke();
+</script>
+
+
+
+<div class="video-wrapper">
+    <div class="video-container">
+        <video controls>
+            <source src="watervidfun.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-container">
+        <video controls>
+            <source src="reklamfilm.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
 </body>
 </html>
-
