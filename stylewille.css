@@ -145,3 +145,29 @@ p {
     background-color: #F3F8F2;
     border-radius: 5px;
 }
+
+.kundtext {
+  position: absolute;
+  top: 1500px;
+  left: 30px;
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.image-trust {
+  position: absolute;
+  width: 100px;
+  bottom: -755px;
+  left: 30px;
+  height: 100px;
+}
+
+.row {
+  flex: auto;
+  position: absolute;
+  bottom: -870px;
+  width: 200px;
+  left: 30px;
+  height: 130px;
+}
