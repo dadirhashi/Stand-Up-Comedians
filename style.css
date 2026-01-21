@@ -97,9 +97,8 @@ html, body {
 
 /* Checkout-ikon i nav */
 .image-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  right: 80px;
 }
 
 .image-button img {
