@@ -1,25 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
+    <title>Checkout - The Perfect Bottle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <!-- Navigation -->
+    <header>
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="index.html" class="button-38">Home</a></li>
+                <li><a href="checkout.html" class="button-38">Checkout</a></li>
+                <li><a href="product.html" class="button-38">Product</a></li>
+                <li><a href="about.html" class="button-38">About</a></li>
+                <li><a href="contact.html" class="button-38">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Shopping Cart</h1>
+
+    <div class="container">
+        
+        <div class="cart-items">
+            <div class="cart-item">
+                <img src="images\vattenflaskablue.jpg" alt="Water Bottle" class="item-image-checkout">
+                <div class="item-details">
+                    <h3>The Perfect Bottle - Blue</h3>
+                    <p class="item-description">Premium insulated water bottle</p>
+                    <div class="quantity">
+                        <label for="qty1">Quantity:</label>
+                        <input type="number" id="qty1" value="1" min="1" max="10">
+                    </div>
+                </div>
+                <div class="item-price">
+                    <p class="price">$29.99</p>
+                    <button class="remove-btn">Remove</button>
+                </div>
+            </div>
+
+            <div class="cart-item">
+                <img src="images\vattenflaskarosa.jpg" alt="Water Bottle" class="item-image-checkout">
+                <div class="item-details">
+                    <h3>The Perfect Bottle - Pink</h3>
+                    <p class="item-description">Premium insulated water bottle</p>
+                    <div class="quantity">
+                        <label for="qty2">Quantity:</label>
+                        <input type="number" id="qty2" value="1" min="1" max="10">
+                    </div>
+                </div>
+                <div class="item-price">
+                    <p class="price">$29.99</p>
+                    <button class="remove-btn">Remove</button>
+                </div>
+            </div>
+
+            <div class="cart-item">
+                <img src="images\Vattenflaska.jpg" alt="Water Bottle" class="item-image-checkout">
+                <div class="item-details">
+                    <h3>The Perfect Bottle - Green</h3>
+                    <p class="item-description">Premium insulated water bottle</p>
+                    <div class="quantity">
+                        <label for="qty3">Quantity:</label>
+                        <input type="number" id="qty3" value="1" min="1" max="10">
+                    </div>
+                </div>
+                <div class="item-price">
+                    <p class="price">$29.99</p>
+                    <button class="remove-btn">Remove</button>
+                </div>
+            </div>
+
     
-<h1>Checkout</h1>
-<p>Welcome to this page (Checkout)</p>
-<a href="https://www.google.com/imghp" target="_blank">
-    <img src="images/image2.jpg" alt="Small image" width="150" height="150">
-</a>
-<!-- Links to all 5 pages. -->
-<nav>
-    <a href="index.html">Home</a> |
-    <a href="checkout.html">Checkout</a> |
-    <a href="product.html">Product</a> |
-    <a href="about.html">About</a> |
-    <a href="contact.html">Contact</a>
-</nav>
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div class="summary-row">
+                <span>Subtotal:</span>
+                <span>$59.98</span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping:</span>
+                <span>$5.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Tax:</span>
+                <span>$5.20</span>
+            </div>
+            <hr>
+            <div class="summary-row total">
+                <span>Total:</span>
+                <span>$70.18</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    
 </body>
+
 </html>
 

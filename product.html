@@ -1,24 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product – Perfect Waterbottle</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Product</h1>
-<p>Welcome to this page (Product)</p>
-<a href="https://www.google.com/imghp" target="_blank">
-    <img src="images/image3.jpg" alt="Small image" width="150" height="150">
-</a>
-<!-- Links to all 5 pages. -->
-<nav>
-    <a href="index.html">Home</a> |
-    <a href="checkout.html">Products</a> |
-    <a href="product.html">Product</a> |
-    <a href="about.html">About</a> |
-    <a href="contact.html">Contact</a>
-</nav>
+  <!-- Huvudnavigation -->
+  <header>
+    <nav class="main-nav">
+      <h1 class="header-left">The <br>Perfect <br>Waterbottle</h1>
+      <ul class="nav-links">
+        <li><a href="index.html" class="button-38">Home</a></li>
+        <li><a href="contact.html" class="button-38">Contact</a></li>
+        <li><a href="product.html" class="button-38">Product</a></li>
+        <li><a href="about.html" class="button-38">About</a></li>
+        <li>
+          <!-- Riktig knapp för skämt-knappen -->
+          <button type="button" onclick="loadJoke()" class="button-38">
+            Get a new joke
+          </button>
+        </li>
+        <li>
+          <!-- Checkout-ikon som länk -->
+          <a href="checkout.html" class="image-button">
+            <img src="images/check.png" alt="Checkout">
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Bildslideshow för produkten -->
+    <section class="product-hero">
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="images/vattenflaska.jpg" alt="Green waterbottle">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="images/Vattenflaskarosa.jpg" alt="Pink waterbottle">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="images/vattenflaskablue.jpg" alt="Blue waterbottle">
+        </div>
+
+        <button class="prev" type="button-slideshow" onclick="plusSlides(-1)">❮</button>
+        <button class="next" type="button-slideshow" onclick="plusSlides(1)">❯</button>
+      </div>
+    </section>
+
+    <!-- Skämt från API -->
+    <section class="joke-section">
+      <p id="joke"></p>
+    </section>
+
+    <!-- Kundrecension -->
+    <section class="testimonial-section">
+    <div class="testimonial-column">
+        <h2 class="testimonial-title">Customer review</h2>
+        <div class="testimonial-card">
+        <p>
+        Jag vet inte var jag ska börja. Den här vattenflaskan har förändrat mitt liv.
+        Jag köpte den för att sluta köpa engångsflaskor – men jag anade inte att jag
+        köpte en port till en ny dimension av vätskebalans.
+        </p>
+        <p>
+        Vattnet smakar som om det filtrerats genom moln från Himalaya. Kall? Den
+        håller kylan längre än min vilja att fortsätta ett nyårslöfte. Jag tappade
+        den från tredje våningen – inte en skråma (på flaskan, vill säga).
+        </p>
+        <p>
+        Sedan jag började använda den här flaskan har jag märkt att plantorna växer
+        bättre, katten är snällare och jag får spontana komplimanger för min aura.
+        Jag tror inte jag dricker vatten längre – jag dricker ren perfektion.
+        </p>
+        <p>
+        10/10. Skulle köpa igen, om den någonsin gick sönder.
+        </p>
+    <div class="trust-rating">
+    <img src="trust.png" class="image-trust" alt="Trusted brand">
+
+    <div class="rating-row">
+      <img src="stars.png" alt="Rating stars">
+      <img src="stars.png" alt="Rating stars">
+    </div>
+  </div>
+</section>
+
+    <!-- Videor -->
+    <section class="video-section">
+      <div class="video-wrapper">
+        <div class="video-container">
+          <video controls>
+            <source src="watervidfun.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="video-container">
+          <video controls>
+            <source src="reklamfilm.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- JS för slideshow + skämt-API -->
+  <script>
+    // Slideshow-logik (manuell + automatisk)
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+      const slides = document.getElementsByClassName("mySlides");
+      if (slides.length === 0) return;
+
+      if (n > slides.length) { slideIndex = 1; }
+      if (n < 1) { slideIndex = slides.length; }
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      slides[slideIndex - 1].style.display = "block";
+    }
+
+    // Automatisk bildväxling var 8e sekund
+    setInterval(function () {
+      plusSlides(1);
+    }, 8000);
+
+    // Skämt-API
+    const jokeElement = document.getElementById("joke");
+
+    function loadJoke() {
+      jokeElement.textContent = "Laddar skämt...";
+
+      fetch("https://official-joke-api.appspot.com/random_joke")
+        .then(response => response.json())
+        .then(joke => {
+          jokeElement.textContent = `${joke.setup} — ${joke.punchline}`;
+        })
+        .catch(() => {
+          jokeElement.textContent = "Kunde inte ladda skämt 😢";
+        });
+    }
+
+    // Ladda ett skämt när sidan öppnas
+    loadJoke();
+  </script>
 </body>
 </html>
-
